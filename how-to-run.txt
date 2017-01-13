@@ -5,6 +5,3 @@ npm start (start both TS compiler and lite server)
 npm run lite (runs only lite server)
 
 for details see package.json
-
-Link to this tutorial:
-https://angular.io/docs/ts/latest/cookbook/aot-compiler.html
