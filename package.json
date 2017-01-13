@@ -1,6 +1,6 @@
 {
   "name": "angular-quickstart",
-  "description": "the naked Angular2 app skeleton",
+  "description": "The simplest project to kick angular2 running.",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
