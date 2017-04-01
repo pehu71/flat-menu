@@ -1,0 +1,33 @@
+.fm-container {
+    width:100%;
+    position: relative;
+    background-color: antiquewhite;
+}
+
+.fm-container > ul {
+    list-style-type: none;
+    margin:0;
+    padding:6px;
+}
+
+.fm-container > ul > li {
+    display: block;
+    padding: 6px;
+}
+
+.show-panel {
+    position: absolute;
+    top:0;
+    left:100%;
+    margin:0;
+    padding:12px;
+    width:700px;
+    background-color: aliceblue;
+    z-index: 100;
+}
+
+.show-panel > ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
