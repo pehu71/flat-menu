@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import {FlatMenu} from './flat-menu/flat-menu.module'
+
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    templateUrl: 'app/tpl/app.html'
 })
 export class AppComponent { }
