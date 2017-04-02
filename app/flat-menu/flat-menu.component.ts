@@ -6,12 +6,12 @@ declare let $: any;
 @Component({
     selector: 'flat-menu-vertical',
     template: `
-        <div class="fm-container" (mouseleave)="rootMouseLeave($event)">
+        <div class="fm-container" (mouseleave)="rootItemMouseLeave($event)">
 
             <ul class="ul-level1">
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
-                    <a [routerLink]="item?.routerLink">{{item?.label}}</a>
+                    <a [routerLink]="item?.routerLink" id="{{'root_' + i}}">{{item?.label}}</a>
                     <div class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
@@ -40,6 +40,7 @@ declare let $: any;
 export class FlatMenuVertical implements OnInit {
 
     @Input('menuItems') items: MenuItem[];
+    @Input('rootHoverClass') hover: string;
 
     constructor() {
         // todo: check whether jquery present, otherwise throw
@@ -51,16 +52,21 @@ export class FlatMenuVertical implements OnInit {
 
     rootItemMouseEnter(index: number): void {
         this.hidePanels();
-        let myClass: string = `div[class="show-panel sp-${index}"]`;
-        $(myClass).attr('style', 'display:block')
+
+        let showPanel: string = `div[class="show-panel sp-${index}"]`;
+        $(showPanel).attr('style', 'display:block');
+
+        let rootItem = `#root_${index}`;
+        $(rootItem).addClass(this.hover)
     }
 
-    rootMouseLeave(): void {
+    rootItemMouseLeave(): void {
         this.hidePanels()
     }
 
     private hidePanels(): void {
-        $('.show-panel').attr('style', 'display:none')
+        $('.show-panel').attr('style', 'display:none');
+        $(`.${this.hover}`).removeClass(this.hover)
     }
 
 }

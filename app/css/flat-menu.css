@@ -32,6 +32,21 @@
     background-color: aliceblue;
 }
 
+/*
+=================================================================================
+Adding this class to the element is done through:
+[rootHoverClass]="'root-hover-class'"
+This allows the hover look to persist when mouse enters the associated menu panel
+=================================================================================
+*/
+.root-hover-class {
+    color: #337ab7 !important;
+    background-color: aliceblue;
+}
+/*
+=================================================================================
+*/
+
 .show-panel {
     position: absolute;
     top:0;
@@ -54,6 +69,10 @@
 
 }
 
+.p-level2 {
+
+}
+
 .ul-level3 {
 
 }
@@ -62,6 +81,3 @@
     font-size: 12px;
 }
 
-.p-level2 {
-
-}
