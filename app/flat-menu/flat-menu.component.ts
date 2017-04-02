@@ -47,13 +47,11 @@ export class FlatMenuVertical implements OnInit {
 
     rootItemMouseEnter(index: number): void {
         this.hidePanels();
-        console.log('enter');
         let myClass: string = `div[class="show-panel sp-${index}"]`;
         $(myClass).attr('style', 'display:block')
     }
 
     rootMouseLeave(): void {
-        console.log('leave');
         this.hidePanels()
     }
 
