@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
         this.items = [
             {
                 label: 'Electric guitars',
+                routerLink: ['/cunt', {color:'pink'}],
                 items: [
                     {
                         label: 'Stratocaster',
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
                         label: 'Les Paul',
                         items: [
                             {label: 'Kramer Guitars'},
-                            {label: 'Gibson'},
+                            {label: 'Gibson', routerLink: ['/']},
                             {label: 'Jolana'}
                         ]
                     },

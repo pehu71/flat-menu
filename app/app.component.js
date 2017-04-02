@@ -17,6 +17,7 @@ var AppComponent = (function () {
         this.items = [
             {
                 label: 'Electric guitars',
+                routerLink: ['/cunt', { color: 'pink' }],
                 items: [
                     {
                         label: 'Stratocaster',
@@ -32,7 +33,7 @@ var AppComponent = (function () {
                         label: 'Les Paul',
                         items: [
                             { label: 'Kramer Guitars' },
-                            { label: 'Gibson' },
+                            { label: 'Gibson', routerLink: ['/'] },
                             { label: 'Jolana' }
                         ]
                     },
