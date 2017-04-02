@@ -12,6 +12,11 @@
 
 .fm-container > ul > li {
     display: block;
+    padding: 0;
+}
+
+.fm-container > ul > li > a {
+    display: block;
     padding: 6px;
 }
 

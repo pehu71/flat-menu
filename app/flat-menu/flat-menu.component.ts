@@ -9,7 +9,8 @@ declare let $: any;
         <div class="fm-container" (mouseleave)="rootMouseLeave($event)">
             <ul>
 
-                <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">{{item?.label}}
+                <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
+                    <a [routerLink]="item?.routerLink">{{item?.label}}</a>
                     <div class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
