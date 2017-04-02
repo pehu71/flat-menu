@@ -8,15 +8,21 @@ declare let $: any;
         <div class="fm-container" (mouseleave)="rootMouseLeave($event)">
             <ul>
 
-                <li *ngFor="let item of items; index as i;" (mouseenter)="rootItemMouseEnter(i)">{{item['label']}}
+                <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">{{item?.label}}
                     <div class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12">
 
-                            <div *ngFor="let level2 of item.items; index as j;" class="col-lg-4">
-                                <h6>{{level2.label}}</h6>
+                            <div *ngFor="let level2 of item.items" class="col-lg-4">
+                                <h5>{{level2.label}}</h5>
+
+                                <ul *ngIf="level2?.items">
+                                    <li *ngFor="let level3 of level2.items" class="level3">
+                                        {{level3?.label}}
+                                    </li>
+                                </ul>
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </li>
@@ -30,8 +36,10 @@ export class FlatMenuVertical implements OnInit {
 
     items: Array<Object>;
 
-    constructor () {}
+    constructor() {
+    }
 
+// todo: define model, not to fail production build, must be same as for PrimeNg slideMenu
     ngOnInit(): void {
         this.items = [
             {
@@ -40,11 +48,20 @@ export class FlatMenuVertical implements OnInit {
                     label: 'Stratocaster',
                     icon: 'fa-plus',
                     items: [
-                        {label: 'Project'},
-                        {label: 'Other'},
+                        {label: 'Fender'},
+                        {label: 'Squier'},
+                        {label: 'SX'},
+                        {label: 'Jackson'}
                     ]
                 },
-                    {label: 'Les Paul'},
+                    {
+                        label: 'Les Paul',
+                        items: [
+                            {label: 'Kramer Guitars'},
+                            {label: 'Gibson'},
+                            {label: 'Jolana'}
+                        ]
+                    },
                     {label: 'Flying-V'},
                     {label: 'Mockingbird'},
                     {label: 'Superstrat'}
@@ -67,7 +84,10 @@ export class FlatMenuVertical implements OnInit {
                     {label: 'Strings', icon: 'fa-mail-forward'},
                     {label: 'Pick-ups', icon: 'fa-mail-reply'},
                     {label: 'Bridges'},
-                    {label: 'Tremolos'}
+                    {label: 'Tremolos'},
+                    {label: 'Stands', icon: 'fa-mail-forward'},
+                    {label: 'Tuners', icon: 'fa-mail-reply'},
+                    {label: 'Metronomes'}
                 ]
             }
         ];
