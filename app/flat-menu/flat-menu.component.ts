@@ -10,9 +10,9 @@ declare let $: any;
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">{{item?.label}}
                     <div class="show-panel {{'sp-' + i}}">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 col-md-12">
 
-                            <div *ngFor="let level2 of item.items" class="col-lg-4">
+                            <div *ngFor="let level2 of item.items" class="col-lg-4 col-md-4">
                                 <h5>{{level2.label}}</h5>
 
                                 <ul *ngIf="level2?.items">
