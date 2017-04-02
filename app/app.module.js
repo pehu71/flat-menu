@@ -10,6 +10,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var flat_menu_module_1 = require("./flat-menu/flat-menu.module");
+var app_routes_1 = require("./app.routes");
+var index_component_1 = require("./index.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,9 +21,11 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            app_routes_1.routing,
             flat_menu_module_1.FlatMenu
         ],
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, index_component_1.IndexComponent],
+        providers: [app_routes_1.appRoutingProviders],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
