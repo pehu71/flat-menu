@@ -1,13 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 
+declare let $: any;
+
 @Component({
     selector: 'flat-menu-vertical',
     template: `
-        <div class="fm-container">
+        <div class="fm-container" (mouseleave)="rootMouseLeave($event)">
             <ul>
                 
-                <li *ngFor="let item of items; index as i;" (mouseenter)="rootMouseEnter($event, i)" (mouseleave)="rootMouseLeave($event, i)">{{item['label']}}
-                    <div class="show-panel">
+                <li *ngFor="let item of items; index as i;" (mouseenter)="rootMouseEnter($event, i)">{{item['label']}}
+                    <div class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12">
                         </div>
                     </div>
@@ -60,11 +62,14 @@ export class FlatMenuVertical implements OnInit {
     }
 
     rootMouseEnter(event: any, index: number): void {
-        console.log(['eneter'], index)
+        let myClass: string = `div[class="show-panel sp-${index}"]`;
+        $(myClass).attr('style', 'display:block')
+        // document.querySelector(myClass).setAttribute('style', 'display:block')
     }
 
     rootMouseLeave(event: any, index: number): void {
-        console.log(['leave', index])
+        $('.show-panel').attr('style', 'display:none')
+        // document.querySelector('div.show-panel').setAttribute('style', 'display:none')
     }
 
 }
