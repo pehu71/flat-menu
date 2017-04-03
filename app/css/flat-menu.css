@@ -49,8 +49,7 @@ This allows the hover look to persist when mouse enters the associated menu pane
 
 .show-panel {
     position: absolute;
-    /*margin-top: -32px;*/
-    top:50%;
+    top: 0;
     left:100%;
     padding:12px;
     width:700px;
