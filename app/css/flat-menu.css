@@ -49,9 +49,9 @@ This allows the hover look to persist when mouse enters the associated menu pane
 
 .show-panel {
     position: absolute;
-    top:0;
+    /*margin-top: -32px;*/
+    top:50%;
     left:100%;
-    margin:0;
     padding:12px;
     width:700px;
     background-color: aliceblue;

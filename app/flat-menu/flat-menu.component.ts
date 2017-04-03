@@ -12,7 +12,8 @@ declare let $: any;
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
                     <a [routerLink]="item?.routerLink" id="{{'root_' + i}}">{{item?.label}}</a>
-                    <div class="show-panel {{'sp-' + i}}">
+
+                    <div *ngIf="item?.items?.length > 0" class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
                             <div *ngFor="let level2 of item.items" class="col-lg-4 col-md-4">
