@@ -21,6 +21,7 @@
     display: block;
     padding: 6px 12px;
     text-decoration: none;
+    border: 1px solid #337ab7;
 }
 
 .fm-container > ul > li > a:link, .fm-container > ul > li > a:visited {
@@ -42,6 +43,8 @@ This allows the hover look to persist when mouse enters the associated menu pane
 .root-hover-class {
     color: #337ab7 !important;
     background-color: aliceblue;
+    border: 1px solid #337ab7;
+    z-index: 200;
 }
 /*
 =================================================================================
@@ -51,11 +54,13 @@ This allows the hover look to persist when mouse enters the associated menu pane
     position: absolute;
     top: 0;
     left:100%;
-    padding:12px;
+    padding: 16px;
     width:700px;
     background-color: aliceblue;
     z-index: 100;
     display: none;
+    border: solid 1px #337ab7;
+    margin-left: -1px;
 }
 
 .show-panel ul {
@@ -73,7 +78,7 @@ This allows the hover look to persist when mouse enters the associated menu pane
 }
 
 .ul-level3 {
-
+    margin-left: 42px !important;
 }
 
 .ul-level3 > li {
