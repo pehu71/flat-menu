@@ -15,11 +15,12 @@ export class AppComponent implements OnInit {
         this.items = [
             {
                 label: 'Electric guitars',
+                image: 'img/pracky/small/w1.jpg',
                 routerLink: ['/cunt', {color:'pink'}],
                 items: [
                     {
                         label: 'Stratocaster',
-                        icon: 'fa-plus',
+                        image: 'img/pracky/small/w5.jpg',
                         items: [
                             {label: 'Fender'},
                             {label: 'Squier'},
@@ -29,20 +30,24 @@ export class AppComponent implements OnInit {
                     },
                     {
                         label: 'Les Paul',
+                        image: 'img/pracky/small/w1.jpg',
                         items: [
                             {label: 'Kramer Guitars'},
                             {label: 'Gibson', routerLink: ['/']},
                             {label: 'Jolana'}
                         ]
                     },
-                    {label: 'Flying-V'},
+                    {
+                        label: 'Flying-V',
+                        image: 'img/pracky/small/w3.jpg'
+                    },
                     {label: 'Mockingbird'},
                     {label: 'Superstrat'}
                 ]
             },
             {
                 label: 'Acoustic guitars',
-                icon: 'fa-edit',
+                image: 'img/pracky/small/w2.jpg',
                 items: [
                     {label: 'Jumbo', icon: 'fa-mail-forward'},
                     {label: 'Blue Grass', icon: 'fa-mail-reply'},
@@ -52,7 +57,7 @@ export class AppComponent implements OnInit {
             },
             {
                 label: 'Accessories',
-                icon: 'fa-edit',
+                image: 'img/pracky/small/w5.jpg',
                 items: [
                     {label: 'Strings', icon: 'fa-mail-forward'},
                     {label: 'Pick-ups', icon: 'fa-mail-reply'},

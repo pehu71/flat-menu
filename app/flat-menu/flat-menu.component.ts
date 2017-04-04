@@ -11,13 +11,17 @@ declare let $: any;
             <ul class="ul-level1">
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
-                    <a [routerLink]="item?.routerLink" (click)="hidePanels()" id="{{'root_' + i}}">{{item?.label}}</a>
+                    <a [routerLink]="item?.routerLink" (click)="hidePanels()" id="{{'root_' + i}}">
+                        <img *ngIf="item.image" class="menu-image" src="{{item.image}}">
+                        {{item?.label}}
+                    </a>
 
                     <div *ngIf="item?.items?.length > 0" class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
                             <div *ngFor="let level2 of item.items" class="col-lg-4 col-md-4">
                                 <p class="p-level2">
+                                    <img *ngIf="level2.image" class="menu-image" src="{{level2.image}}">
                                     <a [routerLink]="level2?.routerLink" (click)="hidePanels(true)">{{level2.label}}</a>
                                 </p>
 

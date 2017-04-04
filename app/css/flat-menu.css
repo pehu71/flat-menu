@@ -80,3 +80,9 @@ This allows the hover look to persist when mouse enters the associated menu pane
     font-size: 12px;
 }
 
+.menu-image {
+    max-height: 32px;
+    max-width: 32px;
+    margin-right: 10px;
+}
+

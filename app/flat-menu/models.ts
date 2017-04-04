@@ -12,4 +12,5 @@ export interface MenuItem {
     disabled?: boolean;
     visible?: boolean;
     target?: string;
+    image?: string;
 }
