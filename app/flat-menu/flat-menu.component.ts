@@ -11,19 +11,19 @@ declare let $: any;
             <ul class="ul-level1">
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
-                    <a [routerLink]="item?.routerLink" id="{{'root_' + i}}">{{item?.label}}</a>
+                    <a [routerLink]="item?.routerLink" (click)="hidePanels()" id="{{'root_' + i}}">{{item?.label}}</a>
 
                     <div *ngIf="item?.items?.length > 0" class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
                             <div *ngFor="let level2 of item.items" class="col-lg-4 col-md-4">
                                 <p class="p-level2">
-                                    <a [routerLink]="level2?.routerLink">{{level2.label}}</a>
+                                    <a [routerLink]="level2?.routerLink" (click)="hidePanels(true)">{{level2.label}}</a>
                                 </p>
 
                                 <ul *ngIf="level2?.items" class="ul-level3">
                                     <li *ngFor="let level3 of level2.items">
-                                        <a [routerLink]="level3?.routerLink">{{level3?.label}}</a>
+                                        <a [routerLink]="level3?.routerLink" (click)="hidePanels(true)">{{level3?.label}}</a>
                                     </li>
                                 </ul>
 
@@ -39,23 +39,18 @@ declare let $: any;
 })
 
 export class FlatMenuVertical implements OnInit {
-
+// todo: remove OnInit if not used
     @Input('menuItems') items: MenuItem[];
     @Input('rootHoverClass') hover: string;
     @Input('fixedTop') fixed: boolean;
 
-    constructor() {
-        // todo: add command - there is a need of closing the panel after clicking the [routerLink]
-        // todo: check whether jquery present, otherwise throw
-    }
+    constructor() {}
 
-    ngOnInit(): void {
-
-    }
+    ngOnInit(): void {}
 
     rootItemMouseEnter(index: number): void {
 
-        this.hidePanels();
+        this.hidePanels(true);
 
         let showPanel: string = `div[class="show-panel sp-${index}"]`;
         let rootItem = `#root_${index}`;
@@ -73,12 +68,14 @@ export class FlatMenuVertical implements OnInit {
     }
 
     rootItemMouseLeave(): void {
-        this.hidePanels()
+        this.hidePanels(true)
     }
 
-    private hidePanels(): void {
+    hidePanels(removeHover?: boolean): void {
         $('.show-panel').attr('style', 'display:none');
-        $(`.${this.hover}`).removeClass(this.hover)
+        if (removeHover) {
+            $(`.${this.hover}`).removeClass(this.hover)
+        }
     }
 
 }
