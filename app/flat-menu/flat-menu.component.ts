@@ -42,6 +42,7 @@ export class FlatMenuVertical implements OnInit {
 
     @Input('menuItems') items: MenuItem[];
     @Input('rootHoverClass') hover: string;
+    @Input('fixedTop') fixed: boolean;
 
     constructor() {
         // todo: add command - there is a need of closing the panel after clicking the [routerLink]
@@ -53,15 +54,22 @@ export class FlatMenuVertical implements OnInit {
     }
 
     rootItemMouseEnter(index: number): void {
+
         this.hidePanels();
 
         let showPanel: string = `div[class="show-panel sp-${index}"]`;
-        let containerHeight = $('.fm-container').height();
-
         let rootItem = `#root_${index}`;
+        let container = '.fm-container';
+
+        let containerHeight = $(container).height();
+        let containerTop = $(container).offset().top;
+        let itemTop = $(rootItem).offset().top;
+
         $(rootItem).addClass(this.hover);
 
-        $(showPanel).attr('style', `display:block;min-height:${containerHeight}px`);
+        if (this.fixed) {
+            $(showPanel).attr('style', `display:block;min-height:${containerHeight}px`);
+        } else $(showPanel).attr('style', `display:block;top:${itemTop-containerTop}px`);
     }
 
     rootItemMouseLeave(): void {
