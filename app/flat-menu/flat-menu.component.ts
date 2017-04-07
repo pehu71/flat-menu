@@ -43,7 +43,7 @@ declare let $: any;
 })
 
 export class FlatMenuVertical {
-// todo: remove OnInit if not used
+
     @Input('menuItems') items: MenuItem[];
     @Input('rootHoverClass') hover: string;
     @Input('fixedTop') fixed: boolean;
