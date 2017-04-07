@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {MenuItem} from "./models";
 
 declare let $: any;
@@ -6,7 +6,7 @@ declare let $: any;
 @Component({
     selector: 'flat-menu-vertical',
     template: `
-        <div class="fm-container" (mouseleave)="rootItemMouseLeave($event)">
+        <div class="fm-container" (mouseleave)="rootItemMouseLeave()">
 
             <ul class="ul-level1">
 
@@ -42,15 +42,13 @@ declare let $: any;
     `
 })
 
-export class FlatMenuVertical implements OnInit {
+export class FlatMenuVertical {
 // todo: remove OnInit if not used
     @Input('menuItems') items: MenuItem[];
     @Input('rootHoverClass') hover: string;
     @Input('fixedTop') fixed: boolean;
 
     constructor() {}
-
-    ngOnInit(): void {}
 
     rootItemMouseEnter(index: number): void {
 
