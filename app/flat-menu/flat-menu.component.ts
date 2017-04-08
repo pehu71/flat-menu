@@ -8,7 +8,7 @@ declare let $: any;
     template: `
         <div class="fm-container" (mouseleave)="rootItemMouseLeave()">
 
-            <ul class="ul-level1">
+            <ul class="ul-level1" *ngIf="depth > 0">
 
                 <li *ngFor="let item of items; index as i" (mouseenter)="rootItemMouseEnter(i)">
                     <a [routerLink]="item?.routerLink" (click)="hidePanels()" id="{{'root_' + i}}">
@@ -16,7 +16,7 @@ declare let $: any;
                         {{item?.label}}
                     </a>
 
-                    <div *ngIf="item?.items?.length > 0" class="show-panel {{'sp-' + i}}">
+                    <div *ngIf="item?.items?.length > 0 && depth > 1" class="show-panel {{'sp-' + i}}">
                         <div class="col-lg-12 col-md-12">
 
                             <div *ngFor="let level2 of item.items" class="col-lg-4 col-md-4">
@@ -25,7 +25,7 @@ declare let $: any;
                                     <a [routerLink]="level2?.routerLink" (click)="hidePanels(true)">{{level2.label}}</a>
                                 </p>
 
-                                <ul *ngIf="level2?.items" class="ul-level3">
+                                <ul *ngIf="level2?.items && depth > 2" class="ul-level3">
                                     <li *ngFor="let level3 of level2.items">
                                         <a [routerLink]="level3?.routerLink" (click)="hidePanels(true)">{{level3?.label}}</a>
                                     </li>
@@ -46,7 +46,8 @@ export class FlatMenuVertical {
 
     @Input('menuItems') items: MenuItem[];
     @Input('rootHoverClass') hover: string;
-    @Input('fixedTop') fixed: boolean;
+    @Input('fixedTop') fixed: boolean = false;
+    @Input() depth: number = 2;
 
     constructor() {}
 
