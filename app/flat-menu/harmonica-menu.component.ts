@@ -12,7 +12,7 @@ import {MenuItem} from "./models";
                 
                 <li *ngFor="let item of items; index as i">
                     <a [routerLink]="item?.routerLink">
-                        <i *ngIf="item?.items.length > 0" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
+                        <i *ngIf="item?.items?.length > 0" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
                         <img *ngIf="item.image" class="menu-image" src="{{item.image}}">
                         {{item?.label}}
                     </a>
@@ -20,7 +20,10 @@ import {MenuItem} from "./models";
                     <ul class="har-level2" *ngIf="item?.items?.length > 0 && depth > 1">
                         <li *ngFor="let level2 of item.items">
                             <div>
-                                <a [routerLink]="level2?.routerLink">{{level2.label}}</a>
+                                <a [routerLink]="level2?.routerLink">
+                                    <i *ngIf="level2?.items?.length > 0" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
+                                    {{level2.label}}
+                                </a>
                             </div>
                             
                             <ul class="har-level3" *ngIf="level2?.items && depth > 2">
