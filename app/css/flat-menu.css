@@ -1,3 +1,4 @@
+/*flat-menu*/
 .fm-container {
     width:100%;
     position: relative;
@@ -91,3 +92,51 @@ This allows the hover look to persist when mouse enters the associated menu pane
     margin-right: 10px;
 }
 
+/*
+=================================================================================
+harmonica-menu
+=================================================================================
+*/
+
+.fm-container-harmonica {
+    width:100%;
+    position: relative;
+    background-color: #337ab7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fm-container-harmonica > ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+.fm-container-harmonica > ul > li {
+    display: block;
+    padding: 0;
+
+}
+
+.fm-container-harmonica > ul > li > a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    border: 1px solid #337ab7;
+}
+
+.fm-container-harmonica > ul > li > a:link, .fm-container-harmonica > ul > li > a:visited {
+    color: white;
+}
+
+.fm-container-harmonica > ul > li > a:hover, .fm-container-harmonica > ul > li > a:active {
+    color: #337ab7;
+    background-color: aliceblue;
+}
+
+.har-level1 {
+
+}
+
+.har-level2 {
+
+}
