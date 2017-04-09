@@ -124,11 +124,13 @@ harmonica-menu
     border: 1px solid #337ab7;
 }
 
-.fm-container-harmonica > ul > li > a:link, .fm-container-harmonica > ul > li > a:visited {
+.fm-container-harmonica > ul > li > a:link,
+.fm-container-harmonica > ul > li > a:visited {
     color: white;
 }
 
-.fm-container-harmonica > ul > li > a:hover, .fm-container-harmonica > ul > li > a:active {
+.fm-container-harmonica > ul > li > a:hover,
+.fm-container-harmonica > ul > li > a:active {
     color: #337ab7;
     background-color: aliceblue;
 }
@@ -138,5 +140,36 @@ harmonica-menu
 }
 
 .har-level2 {
+    list-style-type: none;
+    background-color: #d8e7f5;
+    margin: 0;
+    padding: 0;
+}
 
+.har-level2 > li {
+
+}
+
+.har-level2 > li > div {
+
+}
+
+.har-level2 > li > div > a {
+    display: block;
+    padding: 6px 12px;
+}
+
+.har-level3 {
+    list-style-type: none;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.har-level3 > li > div {
+
+}
+
+.har-level3 > li > div > a {
+    padding: 6px 24px;
 }
