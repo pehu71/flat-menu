@@ -171,3 +171,7 @@ harmonica-menu
     display: block;
     padding: 6px 24px;
 }
+
+.right-margin-chevron {
+    margin-right: 12px;
+}

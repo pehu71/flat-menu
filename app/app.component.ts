@@ -21,51 +21,56 @@ export class AppComponent implements OnInit {
                     {
                         label: 'Stratocaster',
                         image: 'img/pracky/small/w5.jpg',
+                        routerLink: ['/'],
                         items: [
-                            {label: 'Fender'},
-                            {label: 'Squier'},
-                            {label: 'SX'},
-                            {label: 'Jackson'}
+                            {label: 'Fender', routerLink: ['/']},
+                            {label: 'Squier', routerLink: ['/']},
+                            {label: 'SX', routerLink: ['/']},
+                            {label: 'Jackson', routerLink: ['/']}
                         ]
                     },
                     {
                         label: 'Les Paul',
                         image: 'img/pracky/small/w1.jpg',
+                        routerLink: ['/'],
                         items: [
-                            {label: 'Kramer Guitars'},
+                            {label: 'Kramer Guitars', routerLink: ['/']},
                             {label: 'Gibson', routerLink: ['/']},
-                            {label: 'Jolana'}
+                            {label: 'Jolana', routerLink: ['/']}
                         ]
                     },
                     {
                         label: 'Flying-V',
+                        routerLink: ['/'],
                         image: 'img/pracky/small/w3.jpg'
                     },
-                    {label: 'Mockingbird'},
-                    {label: 'Superstrat'}
+                    {label: 'Mockingbird', routerLink: ['/']},
+                    {label: 'Superstrat', routerLink: ['/']}
                 ]
             },
             {
                 label: 'Acoustic guitars',
                 image: 'img/pracky/small/w2.jpg',
+                routerLink: ['/'],
                 items: [
-                    {label: 'Jumbo', icon: 'fa-mail-forward'},
-                    {label: 'Blue Grass', icon: 'fa-mail-reply'},
-                    {label: 'For children'},
-                    {label: 'Signature models'}
+                    {label: 'Jumbo', icon: 'fa-mail-forward', routerLink: ['/']},
+                    {label: 'Blue Grass', icon: 'fa-mail-reply', routerLink: ['/']},
+                    {label: 'For children', routerLink: ['/']},
+                    {label: 'Signature models', routerLink: ['/']}
                 ]
             },
             {
                 label: 'Accessories',
                 image: 'img/pracky/small/w5.jpg',
+                routerLink: ['/'],
                 items: [
-                    {label: 'Strings', icon: 'fa-mail-forward'},
-                    {label: 'Pick-ups', icon: 'fa-mail-reply'},
-                    {label: 'Bridges'},
-                    {label: 'Tremolos'},
-                    {label: 'Stands', icon: 'fa-mail-forward'},
-                    {label: 'Tuners', icon: 'fa-mail-reply'},
-                    {label: 'Metronomes'}
+                    {label: 'Strings', icon: 'fa-mail-forward', routerLink: ['/']},
+                    {label: 'Pick-ups', icon: 'fa-mail-reply', routerLink: ['/']},
+                    {label: 'Bridges', routerLink: ['/']},
+                    {label: 'Tremolos', routerLink: ['/']},
+                    {label: 'Stands', icon: 'fa-mail-forward', routerLink: ['/']},
+                    {label: 'Tuners', icon: 'fa-mail-reply', routerLink: ['/']},
+                    {label: 'Metronomes', routerLink: ['/']}
                 ]
             }
         ];

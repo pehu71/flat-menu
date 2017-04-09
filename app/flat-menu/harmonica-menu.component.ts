@@ -12,6 +12,7 @@ import {MenuItem} from "./models";
                 
                 <li *ngFor="let item of items; index as i">
                     <a [routerLink]="item?.routerLink">
+                        <i *ngIf="true" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
                         <img *ngIf="item.image" class="menu-image" src="{{item.image}}">
                         {{item?.label}}
                     </a>
