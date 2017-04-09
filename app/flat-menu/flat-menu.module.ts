@@ -19,3 +19,4 @@ import {HarmonicaMenu} from "./harmonica-menu.component";
 })
 
 export class FlatMenu {}
+// todo: rename components to make some sense

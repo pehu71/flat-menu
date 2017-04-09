@@ -39,7 +39,7 @@ import {MenuItem} from "./models";
         </div>
     `
 })
-
+// todo: <i class="fa fa-chevron-down" aria-hidden="true"></i>
 export class HarmonicaMenu {
 
     @Input('menuItems') items: MenuItem[];
