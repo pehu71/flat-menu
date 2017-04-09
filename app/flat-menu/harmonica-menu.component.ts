@@ -43,6 +43,7 @@ import {MenuItem} from "./models";
 export class HarmonicaMenu {
 
     @Input('menuItems') items: MenuItem[];
+    @Input('multiOpen') multi: boolean;
     @Input() depth: number = 2;
 
     constructor() {}
