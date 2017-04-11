@@ -34,6 +34,12 @@
     "@types/jquery": "^2.0.41",
     "@types/node": "^6.0.52",
     "concurrently": "^3.0.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.10"
   }
