@@ -1,4 +1,4 @@
-import {Directive, HostListener} from '@angular/core';
+import {Directive, HostListener, Input} from '@angular/core';
 
 declare let $: any;
 
@@ -8,19 +8,25 @@ declare let $: any;
 
 export class TogglerDirective {
 
+    @Input()     expanded: boolean;
+
     @HostListener('click', ['$event.target'])
     onClick(trg: any) {
 
-        let uls = $(trg).siblings('ul').first();
+        let uls;
 
-        if (uls.hasClass('hidden')) {
-            uls.removeClass('hidden')
+        if ($(trg).is('a')) {
+            uls = $(trg).siblings('ul').first();
         } else {
-            uls.addClass('hidden')
+            uls = $(trg).parent('a').siblings('ul').first();
         }
+
+        uls.animate({
+            height: ['toggle', 'swing']
+        }, 555, 'linear');
     }
 
-    expanded: boolean;
+
 
     constructor () {}
 

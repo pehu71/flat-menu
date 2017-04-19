@@ -18,7 +18,7 @@ var AppComponent = (function () {
             {
                 label: 'Electric guitars',
                 image: 'img/pracky/small/w1.jpg',
-                routerLink: ['/cunt', { color: 'pink' }],
+                routerLink: ['/'],
                 items: [
                     {
                         label: 'Stratocaster',

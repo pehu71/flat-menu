@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
             {
                 label: 'Electric guitars',
                 image: 'img/pracky/small/w1.jpg',
-                routerLink: ['/cunt', {color:'pink'}],
+                routerLink: ['/'],
                 items: [
                     {
                         label: 'Stratocaster',
