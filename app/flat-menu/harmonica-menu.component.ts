@@ -10,14 +10,14 @@ import {MenuItem} from "./models";
         <div class="fm-container-harmonica">
             <ul class="har-level1" *ngIf="depth > 0">
                 
-                <li *ngFor="let item of items; index as i">
+                <li *ngFor="let item of items; index as i" toggler>
                     <a [routerLink]="item?.routerLink">
                         <i *ngIf="item?.items?.length > 0" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
                         <img *ngIf="item.image" class="menu-image" src="{{item.image}}">
                         {{item?.label}}
                     </a>
                     
-                    <ul class="har-level2" *ngIf="item?.items?.length > 0 && depth > 1">
+                    <ul class="har-level2 hidden" *ngIf="item?.items?.length > 0 && depth > 1">
                         <li *ngFor="let level2 of item.items">
                                 <a [routerLink]="level2?.routerLink">
                                     <i *ngIf="level2?.items?.length > 0" class="fa fa-chevron-right right-margin-chevron" aria-hidden="true"></i>
@@ -25,7 +25,7 @@ import {MenuItem} from "./models";
                                 </a>
 
                             
-                            <ul class="har-level3" *ngIf="level2?.items && depth > 2">
+                            <ul class="har-level3 hidden" *ngIf="level2?.items && depth > 2">
                                 <li *ngFor="let level3 of level2.items">
                                         <a [routerLink]="level3?.routerLink">{{level3?.label}}</a>
                                 </li>
