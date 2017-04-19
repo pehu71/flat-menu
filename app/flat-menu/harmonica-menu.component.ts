@@ -27,9 +27,7 @@ import {MenuItem} from "./models";
                             
                             <ul class="har-level3" *ngIf="level2?.items && depth > 2">
                                 <li *ngFor="let level3 of level2.items">
-                                    <!--<div>-->
                                         <a [routerLink]="level3?.routerLink">{{level3?.label}}</a>
-                                    <!--</div>-->
                                 </li>
                             </ul>
                             
