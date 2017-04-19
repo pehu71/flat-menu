@@ -3,7 +3,8 @@ import {Directive, HostListener, Input} from '@angular/core';
 declare let $: any;
 
 @Directive({
-    selector: '[toggler]'
+    selector: '[toggler]',
+    exportAs: 'toggler'
 })
 
 export class TogglerDirective {
