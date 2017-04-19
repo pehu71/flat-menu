@@ -8,10 +8,12 @@ declare let $: any;
 
 export class TogglerDirective {
 
-    @Input()     expanded: boolean;
+    @Input('toggler') expanded: boolean;
 
     @HostListener('click', ['$event.target'])
     onClick(trg: any) {
+
+        this.expanded = !this.expanded;
 
         let uls;
 
@@ -26,10 +28,6 @@ export class TogglerDirective {
         }, 555, 'linear');
     }
 
-
-
     constructor () {}
-
-
 
 }
