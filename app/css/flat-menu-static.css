@@ -133,19 +133,11 @@ harmonica-menu
     color: white;
 }
 
-.har-level1 {
-
-}
-
 .har-level2 {
     list-style-type: none;
     background-color: #d8e7f5;
     margin: 0;
     padding: 0;
-}
-
-.har-level2 > li {
-
 }
 
 .har-level2 > li > a {
